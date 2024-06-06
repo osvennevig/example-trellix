@@ -46,7 +46,7 @@ export default function Signup() {
           id="login-header"
           className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
         >
-          Log in
+          Logg inn
         </h2>
       </div>
 

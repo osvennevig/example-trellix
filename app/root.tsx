@@ -61,7 +61,7 @@ export default function App() {
                   <LoginIcon />
                   <br />
                   <span className="text-slate-500 text-xs uppercase font-bold">
-                    Log in
+                    Logg inn
                   </span>
                 </Link>
               )}

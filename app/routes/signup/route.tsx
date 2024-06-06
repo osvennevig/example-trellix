@@ -92,7 +92,7 @@ export default function Signup() {
             <div className="text-sm text-slate-500">
               Already have an account?{" "}
               <Link className="underline" to="/login">
-                Log in
+                Logg inn
               </Link>
               .
             </div>
