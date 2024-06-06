@@ -1,4 +1,4 @@
-import { json, redirect, type DataFunctionArgs } from "@remix-run/node";
+import { json, redirect, type LoaderFunctionArgs } from "@remix-run/node";
 import { Form, Link, useActionData } from "@remix-run/react";
 
 import { redirectIfLoggedInLoader, setAuthOnResponse } from "~/auth/auth";
@@ -11,10 +11,10 @@ import { login } from "./queries";
 export const loader = redirectIfLoggedInLoader;
 
 export const meta = () => {
-  return [{ title: "Trellix Login" }];
+  return [{ title: "Login" }];
 };
 
-export async function action({ request }: DataFunctionArgs) {
+export async function action({ request }: LoaderFunctionArgs) {
   let formData = await request.formData();
   let email = String(formData.get("email") || "");
   let password = String(formData.get("password") || "");

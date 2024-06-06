@@ -1,4 +1,8 @@
-import { type DataFunctionArgs, createCookie, redirect } from "@remix-run/node";
+import {
+  type LoaderFunctionArgs,
+  createCookie,
+  redirect,
+} from "@remix-run/node";
 
 let secret = process.env.COOKIE_SECRET || "default";
 if (secret === "default") {
@@ -47,7 +51,9 @@ export async function requireAuthCookie(request: Request) {
   return userId;
 }
 
-export async function redirectIfLoggedInLoader({ request }: DataFunctionArgs) {
+export async function redirectIfLoggedInLoader({
+  request,
+}: LoaderFunctionArgs) {
   let userId = await getAuthFromRequest(request);
   if (userId) {
     throw redirect("/home");

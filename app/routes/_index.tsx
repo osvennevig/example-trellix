@@ -2,7 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
-  return [{ title: "Trellix, a Remix Demo" }];
+  return [{ title: "Remix" }];
 };
 
 export default function Index() {
@@ -10,6 +10,23 @@ export default function Index() {
     <div className="h-full flex flex-col items-center pt-20 bg-slate-900">
       <img src="/remix-logo-new@dark.png" width="402" height="149" />
       <div className="space-y-4 max-w-md text-lg text-slate-300">
+        <div className="flex items-center gap-6">
+          <IconLink
+            href="https://www.youtube.com/watch?v=RTHzZVbTl6c&list=PLXoynULbYuED9b2k5LS44v9TQjfXifwNu&pp=gAQBiAQB"
+            icon="/yt_icon_mono_dark.png"
+            label="Videos"
+          />
+          <IconLink
+            href="https://github.com/remix-run/example-trellix"
+            label="Source"
+            icon="/github-mark-white.png"
+          />
+          <IconLink
+            href="https://remix.run/docs/en/main"
+            icon="/r.png"
+            label="Docs"
+          />
+        </div>
         <p>
           This is a demo app to show off the features of Remix and teach them
           through some videos we've published on{" "}
@@ -46,5 +63,25 @@ export default function Index() {
         </Link>
       </div>
     </div>
+  );
+}
+
+function IconLink({
+  icon,
+  href,
+  label,
+}: {
+  icon: string;
+  href: string;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      className="text-slate-500 text-xs uppercase font-bold text-center"
+    >
+      <img src={icon} aria-hidden className="inline-block h-8" />
+      <span className="block mt-2">{label}</span>
+    </a>
   );
 }

@@ -30,7 +30,7 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  return [{ title: `${data ? data.board.name : "Board"} | Trellix` }];
+  return [{ title: `${data ? data.board.name : "Board"} | Remix` }];
 };
 
 export { Board as default };

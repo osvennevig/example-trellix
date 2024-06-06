@@ -65,7 +65,7 @@ export function NewCard({
         required
         ref={textAreaRef}
         name={ItemMutationFields.title.name}
-        placeholder="Enter a title for this card"
+        placeholder="Skriv inn tittel for this card"
         className="outline-none shadow shadow-slate-300 border-slate-300 text-sm rounded-lg w-full py-1 px-2 resize-none placeholder:text-sm placeholder:text-slate-500 h-14"
         onKeyDown={(event) => {
           if (event.key === "Enter") {

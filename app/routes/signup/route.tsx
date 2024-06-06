@@ -11,7 +11,7 @@ import { createAccount } from "./queries";
 export const loader = redirectIfLoggedInLoader;
 
 export const meta = () => {
-  return [{ title: "Trellix Signup" }];
+  return [{ title: "Signup" }];
 };
 
 export async function action({ request }: ActionFunctionArgs) {
