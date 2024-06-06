@@ -30,6 +30,9 @@ export function Card({
 
   let [acceptDrop, setAcceptDrop] = useState<"none" | "top" | "bottom">("none");
 
+  // Show dialog clean react for now
+  const [showDialog, setShowDialog] = useState(false);
+
   return deleteFetcher.state !== "idle" ? null : (
     <li
       onDragOver={(event) => {
@@ -79,8 +82,8 @@ export function Card({
         (acceptDrop === "top"
           ? "border-t-brand-red border-b-transparent"
           : acceptDrop === "bottom"
-          ? "border-b-brand-red border-t-transparent"
-          : "border-t-transparent border-b-transparent")
+            ? "border-b-brand-red border-t-transparent"
+            : "border-t-transparent border-b-transparent")
       }
     >
       <div
@@ -96,20 +99,30 @@ export function Card({
       >
         <h3>{title}</h3>
         <div className="mt-2">{content || <>&nbsp;</>}</div>
-        <deleteFetcher.Form method="post">
-          <input type="hidden" name="intent" value={INTENTS.deleteCard} />
-          <input type="hidden" name="itemId" value={id} />
-          <button
-            aria-label="Delete card"
-            className="absolute top-4 right-4 hover:text-brand-red"
-            type="submit"
-            onClick={(event) => {
-              event.stopPropagation();
-            }}
-          >
-            <Icon name="trash" />
-          </button>
-        </deleteFetcher.Form>
+        <button
+          onClick={() => setShowDialog(true)}
+          aria-label="Delete card"
+          className="absolute top-4 right-4 hover:text-brand-red"
+        >
+          <Icon name="trash" />
+        </button>
+        {showDialog && (
+          <deleteFetcher.Form method="post">
+            <input type="hidden" name="intent" value={INTENTS.deleteCard} />
+            <input type="hidden" name="itemId" value={id} />
+            <button
+              aria-label="Delete card"
+              className="absolute top-4 right-4 hover:text-brand-red"
+              type="submit"
+              onClick={(event) => {
+                event.stopPropagation();
+              }}
+            >
+              Sikker?
+              <Icon name="trash" />
+            </button>
+          </deleteFetcher.Form>
+        )}
       </div>
     </li>
   );

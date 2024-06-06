@@ -130,7 +130,7 @@ export function Column({ name, columnId, items }: ColumnProps) {
             }}
             className="flex items-center gap-2 rounded-lg text-left w-full p-2 font-medium text-slate-500 hover:bg-slate-200 focus:bg-slate-200"
           >
-            <Icon name="plus" /> Add a card
+            <Icon name="plus" /> Nytt gjøremål
           </button>
         </div>
       )}

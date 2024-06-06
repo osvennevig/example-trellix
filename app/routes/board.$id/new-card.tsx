@@ -83,8 +83,8 @@ export function NewCard({
         }}
       />
       <div className="flex justify-between">
-        <SaveButton ref={buttonRef}>Save Card</SaveButton>
-        <CancelButton onClick={onComplete}>Cancel</CancelButton>
+        <SaveButton ref={buttonRef}>Opprett gjøremål</SaveButton>
+        <CancelButton onClick={onComplete}>Avbryt</CancelButton>
       </div>
     </Form>
   );

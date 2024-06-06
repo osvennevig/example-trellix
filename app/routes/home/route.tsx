@@ -68,7 +68,7 @@ function Boards() {
   let { boards } = useLoaderData<typeof loader>();
   return (
     <div className="p-8">
-      <h2 className="font-bold mb-2 text-xl">Boards</h2>
+      <h2 className="font-bold mb-2 text-xl">Gjøremålslister</h2>
       <nav className="flex flex-wrap gap-8">
         {boards.map((board) => (
           <Board
@@ -128,12 +128,12 @@ function NewBoard() {
       <input type="hidden" name="intent" value="createBoard" />
       <div>
         <h2 className="font-bold mb-2 text-xl">New Board</h2>
-        <LabeledInput label="Name" name="name" type="text" required />
+        <LabeledInput label="Navn" name="name" type="text" required />
       </div>
 
       <div className="mt-4 flex items-center gap-4">
         <div className="flex items-center gap-1">
-          <Label htmlFor="board-color">Color</Label>
+          <Label htmlFor="board-color">Angi farge</Label>
           <input
             id="board-color"
             name="color"
@@ -142,7 +142,7 @@ function NewBoard() {
             className="bg-transparent"
           />
         </div>
-        <Button type="submit">{isCreating ? "Creating..." : "Create"}</Button>
+        <Button type="submit">{isCreating ? "Oppretter..." : "Opprett"}</Button>
       </div>
     </Form>
   );

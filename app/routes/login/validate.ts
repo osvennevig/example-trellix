@@ -9,8 +9,8 @@ export function validate(email: string, password: string) {
 
   if (!password) {
     errors.password = "Password is required.";
-  } else if (password.length < 6) {
-    errors.password = "Password must be at least 6 characters.";
+  } else if (password.length < 3) {
+    errors.password = "Password must be at least 3 characters.";
   }
 
   return Object.keys(errors).length ? errors : null;
